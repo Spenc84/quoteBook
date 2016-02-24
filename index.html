@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+ <html lang="en" ng-app="quoteBook">
+ <head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="style.css">
+   <title>Quote Book</title>
+ </head>
+ <body ng-controller="mainCtrl">
+   <h3>Famous Quotes</h3>
+   <!-- Search and remove feature -->
+   <img id="search" ng-click="searchForm = !searchForm" src="search.png" />
+   <input ng-show="searchForm" ng-model="search" type="text" placeholder="Search..."></input>
+   <img id="remove" ng-if="search" ng-click="remove(search)" src="remove.png" />
+   <!-- List of Quotes -->
+   <li ng-repeat="quote in data | filter: search">"<em>{{quote.text}}</em>" -{{quote.author}}</li>
+
+   <!-- Add button -->
+   <div id="add" ng-click="addForm = !addForm">
+     <img src="add.png" />
+     <b ng-if="!addForm">Add</b>
+   </div>
+   <!-- Add Quote Form -->
+   <form>
+     <input id="quote" ng-show="addForm" ng-model="quote" type="text" placeholder="Quote"></input>
+     <input id="author" ng-show="addForm" ng-model="author" type="text" placeholder="Author"></input>
+     <input ng-if="quote && author" ng-click="add({ text: quote, author: author })" type="submit"></input>
+   </form>
+
+   <!-- Javescript files for our Angular App -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+   <script src="./js/app.js"></script>
+   <script src="./js/dataService.js"></script>
+   <script src="./js/mainCtrl.js"></script>
+ </body>
+ </html>

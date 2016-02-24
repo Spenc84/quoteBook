@@ -1,0 +1,37 @@
+h3 {
+  margin: 6px;
+  text-decoration: underline;
+  display: inline-block;
+}
+li {
+  margin-left: 15px;
+}
+
+#add {
+  cursor: pointer;
+}
+#add img {
+  margin: 4px 0 0 10px;
+  float: left;
+}
+#search {
+  vertical-align: middle;
+  width: 16px;
+  cursor: pointer;
+}
+#remove {
+  vertical-align: middle;
+  cursor: pointer;
+}
+#quote {
+  width: 300px;
+}
+input {
+  margin: 6px 2px;
+}
+b {
+  color: green;
+  margin: 6px 0;
+  display: inline-block;
+  font-size: 80%;
+}
